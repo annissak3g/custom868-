@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: playbeat-backend
+    env: node
+    repo: "<REPO_URL>" # set to your Git repo (e.g. https://github.com/you/playbeat)
+    branch: main
+    plan: free
+    buildCommand: "cd 2 && npm install --legacy-peer-deps"
+    startCommand: "cd 2 && npm start"
+    env:
+      - key: MONGODB_URI
+        value: ""
+      - key: JWT_SECRET
+        value: ""
+      - key: STRIPE_ACCOUNT_ID
+        value: ""
+      - key: STRIPE_PUBLISHABLE_KEY
+        value: ""
+      - key: STRIPE_SECRET_KEY
+        value: ""
+      - key: STRIPE_RESTRICTED_KEY
+        value: ""
+      - key: SECRET_KEY
+        value: ""
+      - key: API_SECRET_KEY
+        value: ""
+      - key: FRONTEND_URL
+        value: "https://playbeat.digital"

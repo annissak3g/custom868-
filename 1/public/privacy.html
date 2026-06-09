@@ -1,0 +1,2176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy — PlayBeat Digital</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=Orbitron:wght@400;600;700;800;900&family=Exo+2:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Share+Tech+Mono&display=swap');
+
+        :root {
+            --bg: #0a0b0f;
+            --bg2: #111318;
+            --bg3: #1a1d25;
+            --accent: #f0c040;
+            --accent2: #e85d26;
+            --text: #f0ece4;
+            --muted: #7a7e8c;
+            --border: rgba(255, 255, 255, 0.07);
+            --gold: #f5a623;
+            --gold-dim: rgba(245, 166, 35, 0.22);
+            --radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* ─── TICKER ─── */
+        .ticker-bar {
+            background: linear-gradient(90deg, var(--bg), #060f22, var(--bg));
+            border-bottom: 1px solid rgba(245, 166, 35, .10);
+            height: 30px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .ticker-bar::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, var(--bg) 0%, transparent 90px), linear-gradient(270deg, var(--bg) 0%, transparent 90px);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .ticker-inner {
+            display: inline-flex;
+            align-items: center;
+            height: 100%;
+            white-space: nowrap;
+            animation: tickscroll 55s linear infinite;
+        }
+
+        @keyframes tickscroll {
+            0% {
+                transform: translateX(0)
+            }
+
+            100% {
+                transform: translateX(-50%)
+            }
+        }
+
+        .ticker-inner span {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 10px;
+            letter-spacing: .8px;
+            color: #3d5a88;
+            padding: 0 18px;
+            border-right: 1px solid rgba(245, 166, 35, .10);
+            position: relative;
+            z-index: 1;
+            cursor: default;
+        }
+
+        .t-live {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 9px;
+            letter-spacing: 2.5px;
+            color: #f5a623;
+            padding: 0 16px 0 18px;
+            border-right: 1px solid rgba(245, 166, 35, .10);
+            position: relative;
+            z-index: 1;
+        }
+
+        .pulse {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: #f5a623;
+            box-shadow: 0 0 8px #f5a623;
+            animation: p 1.6s ease infinite;
+            flex-shrink: 0;
+        }
+
+        @keyframes p {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1)
+            }
+
+            50% {
+                opacity: .35;
+                transform: scale(.55)
+            }
+        }
+
+        /* ─── HEADER ─── */
+        header {
+            background: linear-gradient(180deg, rgba(4, 14, 30, .98) 0%, rgba(7, 20, 40, .97) 100%);
+            border-bottom: 1px solid rgba(245, 166, 35, .22);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(24px);
+            box-shadow: 0 6px 48px rgba(0, 0, 0, .75);
+            overflow: visible;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #8a5400 15%, #f5a623 40%, #f7b84a 50%, #f5a623 60%, #8a5400 85%, transparent 100%);
+            box-shadow: 0 0 18px rgba(245, 166, 35, .28);
+        }
+
+        .header-top {
+            border-bottom: 1px solid rgba(245, 166, 35, .10);
+            padding: 6px 0;
+            position: relative;
+            z-index: 3;
+        }
+
+        .header-top-inner {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 28px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            justify-content: flex-end;
+        }
+
+        .search-wrap {
+            flex: 1;
+            max-width: 680px;
+            position: relative;
+            margin-left: auto;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background: rgba(8, 20, 44, .85);
+            border: 1px solid var(--gold-dim);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: border-color .25s, box-shadow .25s;
+        }
+
+        .search-bar:focus-within {
+            border-color: #f5a623;
+            box-shadow: 0 0 0 1px rgba(245, 166, 35, .18), 0 0 18px rgba(245, 166, 35, .28);
+        }
+
+        .search-category {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 10px;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            background: rgba(4, 12, 28, .95);
+            border: none;
+            border-right: 1px solid var(--gold-dim);
+            color: #f7b84a;
+            padding: 0 28px 0 12px;
+            height: 36px;
+            cursor: pointer;
+            outline: none;
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5'%3E%3Cpath d='M0 0l4 5 4-5z' fill='%23f5a623'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 9px center;
+            flex-shrink: 0;
+        }
+
+        .search-category option {
+            background: #07142a;
+            color: #e2ecff;
+        }
+
+        .search-ico {
+            display: flex;
+            align-items: center;
+            padding: 0 8px 0 12px;
+            color: #3d5a88;
+            flex-shrink: 0;
+        }
+
+        .search-input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: #e2ecff;
+            font-family: 'Exo 2', sans-serif;
+            font-size: 13px;
+            padding: 0 12px;
+            height: 36px;
+            outline: none;
+        }
+
+        .search-input::placeholder {
+            color: #3d5a88;
+            font-style: italic;
+        }
+
+        .search-btn {
+            background: linear-gradient(135deg, #8a5400, #c07800, #f5a623);
+            border: none;
+            color: #020a16;
+            padding: 0 18px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 10px;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+            font-weight: 700;
+            cursor: pointer;
+            flex-shrink: 0;
+            transition: filter .2s, box-shadow .2s;
+        }
+
+        .search-btn:hover {
+            filter: brightness(1.18);
+            box-shadow: 0 0 18px rgba(245, 166, 35, .28);
+        }
+
+        .top-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
+        .btn-wish {
+            background: rgba(8, 20, 44, .85);
+            border: 1px solid var(--gold-dim);
+            color: #7a9ac8;
+            width: 36px;
+            height: 36px;
+            border-radius: 3px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: all .2s;
+            flex-shrink: 0;
+        }
+
+        .btn-wish:hover {
+            border-color: #f5a623;
+            color: #f7b84a;
+            box-shadow: 0 0 18px rgba(245, 166, 35, .28);
+        }
+
+        .btn-login {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 10px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            background: transparent;
+            border: 1px solid var(--gold-dim);
+            color: #7a9ac8;
+            padding: 7px 16px;
+            border-radius: 3px;
+            height: 36px;
+            cursor: pointer;
+            transition: all .2s;
+            display: flex;
+            align-items: center;
+        }
+
+        .btn-login:hover {
+            border-color: #f5a623;
+            color: #f9cc7a;
+        }
+
+        .btn-prime {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 9.5px;
+            font-weight: 700;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #8a5400 0%, #c07800 40%, #f5a623 100%);
+            border: 1px solid #f5a623;
+            color: #020a16;
+            padding: 0 18px;
+            height: 36px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: filter .2s, box-shadow .2s, transform .15s;
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-prime:hover {
+            filter: brightness(1.15);
+            box-shadow: 0 0 18px rgba(245, 166, 35, .28);
+            transform: translateY(-1px);
+        }
+
+        .header-inner {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 28px;
+            height: 58px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-decoration: none;
+            flex-shrink: 0;
+            gap: 1px;
+        }
+
+        .logo-digital {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 8.5px;
+            letter-spacing: 3.5px;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #8fa8c8, #b8cde8, #7a9ac8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo-wordmark {
+            display: flex;
+            align-items: baseline;
+            filter: drop-shadow(0 0 10px rgba(245, 166, 35, .38));
+            transition: filter .3s;
+        }
+
+        .logo:hover .logo-wordmark {
+            filter: drop-shadow(0 0 22px rgba(245, 166, 35, .72));
+        }
+
+        .logo-play {
+            font-family: 'Exo 2', sans-serif;
+            font-weight: 800;
+            font-size: 30px;
+            letter-spacing: -1px;
+            color: #fff;
+            line-height: 1;
+        }
+
+        .logo-beat {
+            font-family: 'Exo 2', sans-serif;
+            font-weight: 800;
+            font-size: 30px;
+            letter-spacing: -1px;
+            background: linear-gradient(170deg, #f9cc7a 0%, #f5a623 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+        }
+
+        .logo-underline {
+            height: 1px;
+            width: 100%;
+            margin-top: 3px;
+            background: linear-gradient(90deg, #f5a623 0%, transparent 80%);
+            opacity: .55;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 1px;
+            flex: 1;
+        }
+
+        .nav-item {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 11.5px;
+            font-weight: 500;
+            letter-spacing: .9px;
+            text-transform: uppercase;
+            color: #7a9ac8;
+            text-decoration: none;
+            padding: 7px 10px;
+            border-radius: 3px;
+            white-space: nowrap;
+            border: 1px solid transparent;
+            transition: color .2s, background .2s, border-color .2s;
+        }
+
+        .nav-item:hover {
+            color: #f9cc7a;
+            background: rgba(245, 166, 35, .06);
+            border-color: rgba(245, 166, 35, .10);
+        }
+
+        .nav-item.active {
+            color: #f7b84a;
+            background: rgba(245, 166, 35, .08);
+            border-color: var(--gold-dim);
+        }
+
+        .nav-special {
+            color: #f7b84a !important;
+            background: rgba(245, 166, 35, .06) !important;
+            border-color: rgba(245, 166, 35, .10) !important;
+        }
+
+        .nav-outsource {
+            color: #00d4ff !important;
+            background: rgba(0, 212, 255, .05) !important;
+            border-color: rgba(0, 212, 255, .18) !important;
+        }
+
+        .nav-sep {
+            width: 1px;
+            height: 18px;
+            background: rgba(245, 166, 35, .10);
+            margin: 0 3px;
+            flex-shrink: 0;
+        }
+
+        /* ─── PAGE WRAPPER ─── */
+        .page-wrap {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        /* ─── HERO ─── */
+        .pp-hero {
+            position: relative;
+            overflow: hidden;
+            padding: 4rem 0 3rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .pp-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 50% 65% at 75% 50%, rgba(55, 138, 221, .05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .pp-hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background-image: linear-gradient(rgba(55, 138, 221, .018) 1px, transparent 1px), linear-gradient(90deg, rgba(55, 138, 221, .018) 1px, transparent 1px);
+            background-size: 52px 52px;
+            mask-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, .4) 40%, rgba(0, 0, 0, .4) 60%, transparent 100%);
+        }
+
+        .pp-hero-inner {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .pp-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 10px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: #378add;
+            background: rgba(55, 138, 221, .08);
+            border: 1px solid rgba(55, 138, 221, .22);
+            padding: 6px 16px;
+            border-radius: 50px;
+            margin-bottom: 1.25rem;
+        }
+
+        .pp-eyebrow .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #378add;
+            box-shadow: 0 0 8px #378add;
+            animation: p 1.6s ease infinite;
+        }
+
+        .pp-hero-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(46px, 5.5vw, 80px);
+            letter-spacing: 2px;
+            line-height: 1;
+            margin-bottom: .75rem;
+        }
+
+        .pp-hero-title span {
+            color: #5aabf0;
+        }
+
+        .pp-hero-desc {
+            font-size: 14.5px;
+            color: var(--muted);
+            font-weight: 300;
+            line-height: 1.8;
+            max-width: 520px;
+        }
+
+        .pp-meta {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 10px;
+            flex-shrink: 0;
+            padding-top: 6px;
+        }
+
+        .pp-meta-badge {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 9px;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+            color: #378add;
+            background: rgba(55, 138, 221, .08);
+            border: 1px solid rgba(55, 138, 221, .22);
+            padding: 7px 16px;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+
+        .pp-meta-date {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 9px;
+            letter-spacing: 1.5px;
+            color: #3d5a88;
+            text-transform: uppercase;
+        }
+
+        /* ─── LAYOUT ─── */
+        .pp-layout {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 3rem;
+            padding: 3rem 0 4rem;
+            align-items: start;
+        }
+
+        /* TOC */
+        .pp-toc {
+            position: sticky;
+            top: 100px;
+        }
+
+        .toc-label {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 9px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: #378add;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .toc-label::after {
+            content: '';
+            flex: 0 0 24px;
+            height: 1px;
+            background: rgba(55, 138, 221, .35);
+        }
+
+        .toc-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .toc-list li a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Exo 2', sans-serif;
+            font-size: 11.5px;
+            font-weight: 500;
+            color: #3d5a88;
+            text-decoration: none;
+            padding: 7px 10px;
+            border-radius: 5px;
+            border: 1px solid transparent;
+            transition: color .2s, background .2s, border-color .2s;
+            letter-spacing: .3px;
+        }
+
+        .toc-list li a:hover {
+            color: #8cc8f8;
+            background: rgba(55, 138, 221, .06);
+            border-color: rgba(55, 138, 221, .12);
+        }
+
+        .toc-list li a .toc-num {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 9px;
+            color: rgba(55, 138, 221, .4);
+            flex-shrink: 0;
+            width: 18px;
+        }
+
+        .toc-contact-card {
+            margin-top: 2rem;
+            background: var(--bg2);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.25rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .toc-contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, rgba(55, 138, 221, .45), transparent);
+        }
+
+        .tcc-label {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 8.5px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #378add;
+            margin-bottom: .75rem;
+        }
+
+        .tcc-row {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            font-size: 11.5px;
+            color: var(--muted);
+            margin-bottom: 6px;
+        }
+
+        .tcc-row a {
+            color: #7a9ac8;
+            text-decoration: none;
+            font-size: 11.5px;
+        }
+
+        .tcc-row a:hover {
+            color: #8cc8f8;
+        }
+
+        .tcc-icon {
+            color: rgba(55, 138, 221, .6);
+            flex-shrink: 0;
+        }
+
+        /* ─── CONTENT ─── */
+        .pp-content {
+            min-width: 0;
+        }
+
+        .pp-section {
+            padding: 2.5rem 0;
+            border-bottom: 1px solid var(--border);
+            animation: fadeUp .5s ease both;
+        }
+
+        .pp-section:last-child {
+            border-bottom: none;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .pp-sec-label {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 9px;
+            letter-spacing: 2.8px;
+            text-transform: uppercase;
+            color: #378add;
+            margin-bottom: .5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pp-sec-label::after {
+            content: '';
+            flex: 0 0 28px;
+            height: 1px;
+            background: rgba(55, 138, 221, .35);
+        }
+
+        .pp-sec-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(22px, 2.5vw, 30px);
+            letter-spacing: 1.2px;
+            line-height: 1.1;
+            margin-bottom: 1.25rem;
+            color: var(--text);
+        }
+
+        .pp-sec-title span {
+            color: #5aabf0;
+        }
+
+        .pp-body {
+            font-size: 14px;
+            color: var(--muted);
+            line-height: 1.85;
+            font-weight: 300;
+        }
+
+        .pp-body strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .pp-body p {
+            margin-bottom: .85rem;
+        }
+
+        .pp-body p:last-child {
+            margin-bottom: 0;
+        }
+
+        .pp-items {
+            margin-top: 1.1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .pp-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            background: rgba(4, 14, 36, .45);
+            border: 1px solid rgba(55, 138, 221, .07);
+            border-radius: 8px;
+            padding: 11px 14px;
+            font-size: 13.5px;
+            color: var(--muted);
+            line-height: 1.6;
+            transition: border-color .2s;
+        }
+
+        .pp-item:hover {
+            border-color: rgba(55, 138, 221, .2);
+        }
+
+        .pp-item-dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 5px;
+            flex-shrink: 0;
+            margin-top: 1px;
+            background: rgba(55, 138, 221, .1);
+            border: 1px solid rgba(55, 138, 221, .22);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #378add;
+        }
+
+        .pp-grid2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 1.1rem;
+        }
+
+        .pp-grid2 .pp-item {
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .pp-grid2 .pp-item-dot {
+            margin-top: 0;
+        }
+
+        .pp-callout {
+            background: rgba(55, 138, 221, .05);
+            border: 1px solid rgba(55, 138, 221, .18);
+            border-left: 3px solid #378add;
+            border-radius: 8px;
+            padding: 1.1rem 1.3rem;
+            margin-top: 1.25rem;
+            font-size: 13.5px;
+            color: var(--muted);
+            line-height: 1.75;
+        }
+
+        .pp-callout strong {
+            color: #8cc8f8;
+        }
+
+        .pp-callout.warn {
+            background: rgba(245, 166, 35, .05);
+            border-color: rgba(245, 166, 35, .18);
+            border-left-color: #f5a623;
+        }
+
+        .pp-callout.warn strong {
+            color: #f9cc7a;
+        }
+
+        /* data table */
+        .pp-data-table {
+            width: 100%;
+            margin-top: 1.25rem;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        .pp-data-table th {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 8.5px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #378add;
+            background: rgba(4, 14, 36, .6);
+            border: 1px solid rgba(55, 138, 221, .10);
+            padding: 10px 14px;
+            text-align: left;
+        }
+
+        .pp-data-table td {
+            border: 1px solid rgba(55, 138, 221, .07);
+            padding: 10px 14px;
+            color: var(--muted);
+            vertical-align: top;
+            line-height: 1.6;
+            background: rgba(4, 14, 36, .25);
+            transition: background .2s;
+        }
+
+        .pp-data-table tr:hover td {
+            background: rgba(55, 138, 221, .04);
+        }
+
+        .pp-data-table td strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        /* rights cards */
+        .rights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 10px;
+            margin-top: 1.25rem;
+        }
+
+        .right-card {
+            background: var(--bg2);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.25rem;
+            position: relative;
+            overflow: hidden;
+            transition: border-color .22s, transform .22s;
+        }
+
+        .right-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, rgba(55, 138, 221, .4), transparent);
+        }
+
+        .right-card:hover {
+            border-color: rgba(55, 138, 221, .3);
+            transform: translateY(-2px);
+        }
+
+        .right-card-icon {
+            font-size: 22px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .right-card-title {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 5px;
+        }
+
+        .right-card-desc {
+            font-size: 12px;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        /* ─── CLOSING BAND ─── */
+        .accept-band {
+            background: linear-gradient(135deg, rgba(55, 138, 221, .06), rgba(55, 138, 221, .02));
+            border: 1px solid rgba(55, 138, 221, .2);
+            border-radius: 14px;
+            padding: 2.5rem 3rem;
+            margin: 2rem 0 3.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            position: relative;
+            overflow: hidden;
+            flex-wrap: wrap;
+        }
+
+        .accept-band::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(55, 138, 221, .07), transparent 70%);
+            pointer-events: none;
+        }
+
+        .ab-hud {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            opacity: .35;
+        }
+
+        .ab-tl {
+            top: 10px;
+            left: 10px;
+            border-top: 1px solid #378add;
+            border-left: 1px solid #378add;
+        }
+
+        .ab-tr {
+            top: 10px;
+            right: 10px;
+            border-top: 1px solid #378add;
+            border-right: 1px solid #378add;
+        }
+
+        .ab-bl {
+            bottom: 10px;
+            left: 10px;
+            border-bottom: 1px solid #378add;
+            border-left: 1px solid #378add;
+        }
+
+        .ab-br {
+            bottom: 10px;
+            right: 10px;
+            border-bottom: 1px solid #378add;
+            border-right: 1px solid #378add;
+        }
+
+        .accept-band-label {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 9px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: #378add;
+            margin-bottom: .4rem;
+        }
+
+        .accept-band-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(22px, 2.5vw, 32px);
+            letter-spacing: 1.2px;
+            line-height: 1.1;
+            color: var(--text);
+        }
+
+        .accept-band-title span {
+            color: #5aabf0;
+        }
+
+        .accept-band-sub {
+            font-size: 12.5px;
+            color: var(--muted);
+            margin-top: .4rem;
+            max-width: 480px;
+            line-height: 1.7;
+        }
+
+        .accept-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            flex-shrink: 0;
+        }
+
+        /* ─── BUTTONS ─── */
+        .btn-hero-primary {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 9.5px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #8a5400, #c07800, #f5a623);
+            border: 1px solid #f5a623;
+            color: #020a16;
+            padding: 0 24px;
+            height: 42px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: filter .2s, box-shadow .2s, transform .15s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-hero-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -110%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .28), transparent);
+            transition: left .55s;
+        }
+
+        .btn-hero-primary:hover::before {
+            left: 150%;
+        }
+
+        .btn-hero-primary:hover {
+            filter: brightness(1.15);
+            box-shadow: 0 0 24px rgba(245, 166, 35, .35);
+            transform: translateY(-1px);
+        }
+
+        .btn-hero-outline {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 10px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            background: transparent;
+            border: 1px solid var(--gold-dim);
+            color: #7a9ac8;
+            padding: 0 20px;
+            height: 42px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all .2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .btn-hero-outline:hover {
+            border-color: #f5a623;
+            color: #f9cc7a;
+            background: rgba(245, 166, 35, .04);
+        }
+
+        /* ─── FOOTER ─── */
+        .site-footer {
+            background: linear-gradient(180deg, #040e1e 0%, #020a16 100%);
+            border-top: 1px solid rgba(245, 166, 35, .22);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .site-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #8a5400 15%, #f5a623 40%, #f7b84a 50%, #f5a623 60%, #8a5400 85%, transparent 100%);
+            box-shadow: 0 0 18px rgba(245, 166, 35, .28);
+        }
+
+        .footer-inner {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 28px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-banner {
+            padding: 42px 0 36px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(245, 166, 35, .10);
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-decoration: none;
+            gap: 2px;
+            flex-shrink: 0;
+        }
+
+        .footer-logo-digital {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 8.5px;
+            letter-spacing: 3.5px;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #8fa8c8, #b8cde8, #7a9ac8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            padding-left: 2px;
+        }
+
+        .footer-logo-wordmark {
+            display: flex;
+            align-items: baseline;
+            filter: drop-shadow(0 0 10px rgba(245, 166, 35, .35));
+            transition: filter .3s;
+        }
+
+        .footer-logo:hover .footer-logo-wordmark {
+            filter: drop-shadow(0 0 22px rgba(245, 166, 35, .7));
+        }
+
+        .footer-logo-play {
+            font-family: 'Exo 2', sans-serif;
+            font-weight: 800;
+            font-size: 32px;
+            letter-spacing: -1px;
+            color: #fff;
+            line-height: 1;
+        }
+
+        .footer-logo-beat {
+            font-family: 'Exo 2', sans-serif;
+            font-weight: 800;
+            font-size: 32px;
+            letter-spacing: -1px;
+            line-height: 1;
+            background: linear-gradient(170deg, #f9cc7a 0%, #f5a623 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-logo-pvt {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 8px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #3d5a88;
+            margin-top: 2px;
+            padding-left: 2px;
+        }
+
+        .footer-logo-line {
+            height: 1px;
+            width: 100%;
+            margin-top: 4px;
+            background: linear-gradient(90deg, #f5a623, transparent 80%);
+            opacity: .5;
+        }
+
+        .footer-tagline {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 9.5px;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+            color: #3d5a88;
+            margin-top: 8px;
+            padding-left: 2px;
+        }
+
+        .footer-tagline .ft-play {
+            color: #e2ecff;
+        }
+
+        .footer-tagline .ft-beat {
+            color: #f5a623;
+        }
+
+        .footer-support {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .support-label {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 9px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #3d5a88;
+            margin-right: 4px;
+        }
+
+        .btn-support {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 10px;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            border-radius: 3px;
+            padding: 9px 16px;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: all .22s;
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .btn-support.email {
+            background: rgba(8, 20, 44, .9);
+            border: 1px solid var(--gold-dim);
+            color: #7a9ac8;
+        }
+
+        .btn-support.email:hover {
+            border-color: #f5a623;
+            color: #f9cc7a;
+            box-shadow: 0 0 18px rgba(245, 166, 35, .28);
+        }
+
+        .btn-support.whatsapp {
+            background: rgba(7, 46, 20, .85);
+            border: 1px solid rgba(37, 211, 102, .22);
+            color: #25d366;
+        }
+
+        .btn-support.whatsapp:hover {
+            border-color: #25d366;
+            box-shadow: 0 0 18px rgba(37, 211, 102, .2);
+        }
+
+        .btn-support.telegram {
+            background: rgba(4, 28, 52, .85);
+            border: 1px solid rgba(38, 161, 232, .22);
+            color: #26a1e8;
+        }
+
+        .btn-support.telegram:hover {
+            border-color: #26a1e8;
+            box-shadow: 0 0 18px rgba(38, 161, 232, .2);
+        }
+
+        .footer-bottom {
+            padding: 22px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-copy {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 9.5px;
+            letter-spacing: 1.2px;
+            color: #3d5a88;
+            text-transform: uppercase;
+        }
+
+        .footer-copy strong {
+            color: #f5a623;
+            font-weight: 400;
+        }
+
+        .footer-legal-links {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-legal-links a {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 9.5px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #3d5a88;
+            text-decoration: none;
+            transition: color .2s;
+        }
+
+        .footer-legal-links a:hover {
+            color: #f9cc7a;
+        }
+
+        .footer-legal-links a.active-link {
+            color: #378add;
+        }
+
+        .footer-legal-links span {
+            color: rgba(245, 166, 35, .2);
+            font-size: 8px;
+        }
+
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(135deg, #075e54, #25d366);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-decoration: none;
+            z-index: 999;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, .4);
+            transition: transform .2s, box-shadow .2s;
+        }
+
+        .floating-whatsapp:hover {
+            transform: scale(1.08);
+            box-shadow: 0 6px 28px rgba(37, 211, 102, .55);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TICKER -->
+    <div class="ticker-bar">
+        <div class="ticker-inner">
+            <span class="t-live"><span class="pulse"></span>LIVE</span>
+            <span>DATA PROTECTION</span><span>YOUR PRIVACY MATTERS</span><span>GDPR COMPLIANT</span>
+            <span>SECURE PLATFORMS</span><span>ENCRYPTED CONNECTIONS</span><span>NO DATA SELLING</span>
+            <span>TRANSPARENCY FIRST</span><span>USER RIGHTS</span><span>PLAYBEAT DIGITAL</span>
+            <span class="t-live"><span class="pulse"></span>LIVE</span>
+            <span>DATA PROTECTION</span><span>YOUR PRIVACY MATTERS</span><span>GDPR COMPLIANT</span>
+            <span>SECURE PLATFORMS</span><span>ENCRYPTED CONNECTIONS</span><span>NO DATA SELLING</span>
+            <span>TRANSPARENCY FIRST</span><span>USER RIGHTS</span><span>PLAYBEAT DIGITAL</span>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-top">
+            <div class="header-top-inner">
+                <div class="search-wrap">
+                    <div class="search-bar">
+                        <select class="search-category">
+                            <option>All</option>
+                            <option>Products</option>
+                            <option>Services</option>
+                            <option>Support</option>
+                        </select>
+                        <span class="search-ico"><svg width="14" height="14" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                <circle cx="11" cy="11" r="8" />
+                                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                            </svg></span>
+                        <input class="search-input" type="text" placeholder="Search products, services, solutions…" />
+                        <button class="search-btn"><svg width="12" height="12" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                <circle cx="11" cy="11" r="8" />
+                                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                            </svg>Search</button>
+                    </div>
+                </div>
+                <div class="top-actions">
+                    <button class="btn-wish" title="Wishlist"><svg width="16" height="16" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                        </svg></button>
+                    <button class="btn-login">Login</button>
+                    <button class="btn-prime"><svg width="11" height="11" fill="currentColor" viewBox="0 0 24 24">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg>Get Started</button>
+                </div>
+            </div>
+        </div>
+        <div class="header-inner">
+            <a class="logo" href="index.html">
+                <span class="logo-digital">Digital</span>
+                <div class="logo-wordmark"><span class="logo-play">play</span><span class="logo-beat">beat</span></div>
+                <div class="logo-underline"></div>
+            </a>
+            <nav>
+                <a class="nav-item" href="index.html">Home</a>
+                <a class="nav-item" href="index.html#products">Products</a>
+                <a class="nav-item nav-special" href="index.html#services">Services</a>
+                <a class="nav-item nav-outsource" href="index.html#outsource">Outsource</a>
+                <div class="nav-sep"></div>
+                <a class="nav-item" href="aboutus.html">About</a>
+                <a class="nav-item" href="contact.html">Contact</a>
+                <div class="nav-sep"></div>
+                <a class="nav-item" href="terms.html">Terms</a>
+                <a class="nav-item active" href="privacy.html">Privacy</a>
+                <a class="nav-item" href="refund.html">Refunds</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- PAGE BODY -->
+    <div class="page-wrap">
+
+        <!-- HERO -->
+        <section class="pp-hero">
+            <div class="pp-hero-inner">
+                <div>
+                    <div class="pp-eyebrow"><span class="dot"></span>Legal Document</div>
+                    <h1 class="pp-hero-title">Privacy <span>Policy</span></h1>
+                    <p class="pp-hero-desc">We are committed to protecting your personal information. This Policy
+                        explains what data we collect, how we use it, and the rights you hold over your information when
+                        using Playbeat Digital services.</p>
+                </div>
+                <div class="pp-meta">
+                    <div class="pp-meta-badge">
+                        <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"
+                            style="display:inline;vertical-align:middle;margin-right:5px">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                            <line x1="16" y1="2" x2="16" y2="6" />
+                            <line x1="8" y1="2" x2="8" y2="6" />
+                            <line x1="3" y1="10" x2="21" y2="10" />
+                        </svg>
+                        Effective: June 2026
+                    </div>
+                    <div class="pp-meta-date">Version 1.0 &nbsp;·&nbsp; playbeat.digital</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LAYOUT -->
+        <div class="pp-layout">
+
+            <!-- TOC -->
+            <aside class="pp-toc">
+                <div class="toc-label">Contents</div>
+                <ul class="toc-list">
+                    <li><a href="#p1"><span class="toc-num">01</span>Introduction</a></li>
+                    <li><a href="#p2"><span class="toc-num">02</span>Information We Collect</a></li>
+                    <li><a href="#p3"><span class="toc-num">03</span>How We Use Your Data</a></li>
+                    <li><a href="#p4"><span class="toc-num">04</span>Legal Basis for Processing</a></li>
+                    <li><a href="#p5"><span class="toc-num">05</span>Data Sharing</a></li>
+                    <li><a href="#p6"><span class="toc-num">06</span>Cookies &amp; Tracking</a></li>
+                    <li><a href="#p7"><span class="toc-num">07</span>Data Retention</a></li>
+                    <li><a href="#p8"><span class="toc-num">08</span>Data Security</a></li>
+                    <li><a href="#p9"><span class="toc-num">09</span>Your Rights</a></li>
+                    <li><a href="#p10"><span class="toc-num">10</span>Third-Party Links</a></li>
+                    <li><a href="#p11"><span class="toc-num">11</span>Children's Privacy</a></li>
+                    <li><a href="#p12"><span class="toc-num">12</span>International Transfers</a></li>
+                    <li><a href="#p13"><span class="toc-num">13</span>Changes to This Policy</a></li>
+                    <li><a href="#p14"><span class="toc-num">14</span>Contact &amp; Data Controller</a></li>
+                </ul>
+
+                <div class="toc-contact-card">
+                    <div class="tcc-label">Privacy Concerns?</div>
+                    <div class="tcc-row">
+                        <span class="tcc-icon"><svg width="12" height="12" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                <rect x="2" y="4" width="20" height="16" rx="2" />
+                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                            </svg></span>
+                        <a href="mailto:support@playbeat.digital">support@playbeat.digital</a>
+                    </div>
+                    <div class="tcc-row">
+                        <span class="tcc-icon"><svg width="12" height="12" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                            </svg></span>
+                        <a href="https://wa.me/923318333368" target="_blank" rel="noopener">+92 331 8333368</a>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- CONTENT -->
+            <main class="pp-content">
+
+                <section class="pp-section" id="p1">
+                    <div class="pp-sec-label">Section 01</div>
+                    <h2 class="pp-sec-title"><span>Introduction</span></h2>
+                    <div class="pp-body">
+                        <p>Playbeat Digital ("we", "us", or "our") is committed to protecting the privacy and security
+                            of your personal information. This Privacy Policy explains how we collect, use, disclose,
+                            and safeguard your information when you visit our website, use our platforms, or engage with
+                            our services.</p>
+                        <p>By using any Playbeat Digital service, you consent to the data practices described in this
+                            Policy. If you do not agree, please discontinue use of our services.</p>
+                    </div>
+                    <div class="pp-callout">
+                        <strong>Our Commitment:</strong> We do not sell, rent, or trade your personal information to
+                        third parties for their own marketing purposes. Your data is used solely to deliver and improve
+                        our services.
+                    </div>
+                </section>
+
+                <section class="pp-section" id="p2">
+                    <div class="pp-sec-label">Section 02</div>
+                    <h2 class="pp-sec-title">Information We <span>Collect</span></h2>
+                    <div class="pp-body">
+                        <p>We collect information in several ways depending on how you interact with our services:</p>
+                    </div>
+                    <table class="pp-data-table">
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Examples</th>
+                                <th>How Collected</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Identity Data</strong></td>
+                                <td>Name, username, profile information</td>
+                                <td>Account registration</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Contact Data</strong></td>
+                                <td>Email address, phone number, WhatsApp</td>
+                                <td>Registration, contact forms</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Payment Data</strong></td>
+                                <td>Transaction records, billing details</td>
+                                <td>Purchase flow (via payment processors)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Technical Data</strong></td>
+                                <td>IP address, browser type, device info, OS</td>
+                                <td>Automatically via logs &amp; analytics</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Usage Data</strong></td>
+                                <td>Pages visited, features used, session duration</td>
+                                <td>Automatically via cookies &amp; tracking</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Communications Data</strong></td>
+                                <td>Support messages, feedback, correspondence</td>
+                                <td>Direct contact with our team</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="pp-callout">
+                        We do <strong>not</strong> collect sensitive data such as racial or ethnic origin, political
+                        opinions, religious beliefs, health data, or biometric data as part of our standard services.
+                    </div>
+                </section>
+
+                <section class="pp-section" id="p3">
+                    <div class="pp-sec-label">Section 03</div>
+                    <h2 class="pp-sec-title">How We Use <span>Your Data</span></h2>
+                    <div class="pp-body">
+                        <p>We use your personal information for the following purposes:</p>
+                    </div>
+                    <div class="pp-items">
+                        <div class="pp-item">
+                            <div class="pp-item-dot"><svg width="9" height="9" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                    viewBox="0 0 24 24">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg></div>
+                            <div><strong style="color:var(--text)">Service Delivery</strong> — To create and manage your
+                                account, process transactions, and provide ordered services</div>
+                        </div>
+                        <div class="pp-item">
+                            <div class="pp-item-dot"><svg width="9" height="9" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                    viewBox="0 0 24 24">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg></div>
+                            <div><strong style="color:var(--text)">Communication</strong> — To respond to enquiries,
+                                send service-related notifications, and provide support</div>
+                        </div>
+                        <div class="pp-item">
+                            <div class="pp-item-dot"><svg width="9" height="9" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                    viewBox="0 0 24 24">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg></div>
+                            <div><strong style="color:var(--text)">Security &amp; Fraud Prevention</strong> — To detect,
+                                investigate, and prevent unauthorized access, fraud, and abuse</div>
+                        </div>
+                        <div class="pp-item">
+                            <div class="pp-item-dot"><svg width="9" height="9" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                    viewBox="0 0 24 24">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg></div>
+                            <div><strong style="color:var(--text)">Service Improvement</strong> — To analyze usage
+                                patterns, fix bugs, and improve user experience across our platforms</div>
+                        </div>
+                        <div class="pp-item">
+                            <div class="pp-item-dot"><svg width="9" height="9" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                    viewBox="0 0 24 24">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg></div>
+                            <div><strong style="color:var(--text)">Legal Compliance</strong> — To comply with applicable
+                                laws, regulations, legal processes, or enforceable government requests</div>
+                        </div>
+                        <div class="pp-item">
+                            <div class="pp-item-dot"><svg width="9" height="9" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                    viewBox="0 0 24 24">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg></div>
+                            <div><strong style="color:var(--text)">Marketing</strong> — To send promotional materials
+                                about our services where you have opted in or where permitted by law</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="pp-section" id="p4">
+                    <div class="pp-sec-label">Section 04</div>
+                    <h2 class="pp-sec-title">Legal Basis for <span>Processing</span></h2>
+                    <div class="pp-body">
+                        <p>Where applicable data protection laws require a lawful basis for processing personal data, we
+                            rely on the following:</p>
+                    </div>
+                    <div class="pp-grid2">
+                        <div class="pp-item">
+                            <div class="pp-item-dot"><svg width="9" height="9" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                    viewBox="0 0 24 24">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg></div>
+                            <div><strong style="color:var(--text)">Contract Performance</strong><br>Processing necessary
+                                to fulfill a contract with you</div>
+                        </div>
+                        <div class="pp-item">
+                            <div class="pp-item-dot"><svg width="9" height="9" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                    viewBox="0 0 24 24">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg></div>
+                            <div><strong style="color:var(--text)">Legitimate Interests</strong><br>Fraud prevention,
+                                security, service improvement</div>
+                        </div>
+                        <div class="pp-item">
+                            <div class="pp-item-dot"><svg width="9" height="9" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                    viewBox="0 0 24 24">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg></div>
+                            <div><strong style="color:var(--text)">Legal Obligation</strong><br>Compliance with
+                                applicable laws and regulations</div>
+                        </div>
+                        <div class="pp-item">
+                            <div class="pp-item-dot"><svg width="9" height="9" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                    viewBox="0 0 24 24">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg></div>
+                            <div><strong style="color:var(--text)">Consent</strong><br>Where you have given explicit
+                                consent (e.g. marketing)</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="pp-section" id="p5">
+                    <div class="pp-sec-label">Section 05</div>
+                    <h2 class="pp-sec-title">Data <span>Sharing</span></h2>
+                    <div class="pp-body">
+                        <p>We do not sell your personal data. We may share your information only in the following
+                            limited circumstances:</p>
+                    </div>
+                    <div class="pp-items">
+                        <div class="pp-item">
+                            <div class="pp-item-dot"><svg width="9" height="9" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                    viewBox="0 0 24 24">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg></div>
+                            <div><strong style="color:var(--text)">Service Providers</strong> — Trusted third-party
+                                vendors (payment processors, cloud hosts, analytics) who process data strictly on our
+                                behalf and under confidentiality obligations</div>
+                        </div>
+                        <div class="pp-item">
+                            <div class="pp-item-dot"><svg width="9" height="9" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                    viewBox="0 0 24 24">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg></div>
+                            <div><strong style="color:var(--text)">Legal Requirements</strong> — When required by law,
+                                court order, or government authority</div>
+                        </div>
+                        <div class="pp-item">
+                            <div class="pp-item-dot"><svg width="9" height="9" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                    viewBox="0 0 24 24">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg></div>
+                            <div><strong style="color:var(--text)">Business Transfers</strong> — In connection with a
+                                merger, acquisition, or asset sale, subject to the same privacy commitments</div>
+                        </div>
+                        <div class="pp-item">
+                            <div class="pp-item-dot"><svg width="9" height="9" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                    viewBox="0 0 24 24">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg></div>
+                            <div><strong style="color:var(--text)">With Your Consent</strong> — In any other
+                                circumstances where you have given explicit permission</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="pp-section" id="p6">
+                    <div class="pp-sec-label">Section 06</div>
+                    <h2 class="pp-sec-title">Cookies &amp; <span>Tracking</span></h2>
+                    <div class="pp-body">
+                        <p>Our website and services use cookies and similar tracking technologies to enhance your
+                            experience and analyze site usage.</p>
+                    </div>
+                    <table class="pp-data-table">
+                        <thead>
+                            <tr>
+                                <th>Cookie Type</th>
+                                <th>Purpose</th>
+                                <th>Can Be Disabled?</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Essential</strong></td>
+                                <td>Required for core functionality (authentication, security, sessions)</td>
+                                <td>No — required for service</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Analytics</strong></td>
+                                <td>Understand how users interact with our platforms (e.g. Google Analytics)</td>
+                                <td>Yes — via browser settings</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Functional</strong></td>
+                                <td>Remember preferences such as language, region, or display settings</td>
+                                <td>Yes — via browser settings</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Marketing</strong></td>
+                                <td>Deliver relevant advertisements and track campaign effectiveness</td>
+                                <td>Yes — opt-out available</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="pp-callout">
+                        You can control cookies through your browser settings. Disabling non-essential cookies will not
+                        affect core service functionality.
+                    </div>
+                </section>
+
+                <section class="pp-section" id="p7">
+                    <div class="pp-sec-label">Section 07</div>
+                    <h2 class="pp-sec-title">Data <span>Retention</span></h2>
+                    <div class="pp-body">
+                        <p>We retain personal data only for as long as necessary to fulfill the purposes for which it
+                            was collected, including legal, accounting, or reporting requirements.</p>
+                    </div>
+                    <div class="pp-items">
+                        <div class="pp-item">
+                            <div class="pp-item-dot"><svg width="9" height="9" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                    viewBox="0 0 24 24">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg></div>Account data is retained for the duration of your account and for a
+                            reasonable period after deletion to satisfy legal obligations
+                        </div>
+                        <div class="pp-item">
+                            <div class="pp-item-dot"><svg width="9" height="9" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                    viewBox="0 0 24 24">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg></div>Transaction and billing records are retained for up to 7 years to comply
+                            with financial regulations
+                        </div>
+                        <div class="pp-item">
+                            <div class="pp-item-dot"><svg width="9" height="9" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                    viewBox="0 0 24 24">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg></div>Support communications are retained for a reasonable period to improve
+                            service quality and resolve disputes
+                        </div>
+                        <div class="pp-item">
+                            <div class="pp-item-dot"><svg width="9" height="9" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                    viewBox="0 0 24 24">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg></div>Usage and analytics data may be retained in anonymized or aggregated form
+                            indefinitely
+                        </div>
+                    </div>
+                </section>
+
+                <section class="pp-section" id="p8">
+                    <div class="pp-sec-label">Section 08</div>
+                    <h2 class="pp-sec-title">Data <span>Security</span></h2>
+                    <div class="pp-body">
+                        <p>We implement appropriate technical and organizational measures to protect your personal data
+                            against unauthorized access, alteration, disclosure, or destruction.</p>
+                    </div>
+                    <div class="pp-grid2">
+                        <div class="pp-item">
+                            <div class="pp-item-dot"><svg width="9" height="9" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                    viewBox="0 0 24 24">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg></div>
+                            <div><strong style="color:var(--text)">Encryption</strong><br>Data encrypted in transit
+                                (TLS/SSL) and at rest</div>
+                        </div>
+                        <div class="pp-item">
+                            <div class="pp-item-dot"><svg width="9" height="9" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                    viewBox="0 0 24 24">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg></div>
+                            <div><strong style="color:var(--text)">Access Controls</strong><br>Role-based access
+                                limiting data exposure to authorized personnel</div>
+                        </div>
+                        <div class="pp-item">
+                            <div class="pp-item-dot"><svg width="9" height="9" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                    viewBox="0 0 24 24">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg></div>
+                            <div><strong style="color:var(--text)">Secure Infrastructure</strong><br>Hosted on reputable
+                                cloud platforms with industry-standard security certifications</div>
+                        </div>
+                        <div class="pp-item">
+                            <div class="pp-item-dot"><svg width="9" height="9" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                    viewBox="0 0 24 24">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg></div>
+                            <div><strong style="color:var(--text)">Regular Audits</strong><br>Periodic security reviews
+                                and vulnerability assessments</div>
+                        </div>
+                    </div>
+                    <div class="pp-callout warn">
+                        <strong>Important:</strong> No method of transmission over the internet is 100% secure. While we
+                        strive to protect your data, we cannot guarantee absolute security. Please use strong passwords
+                        and protect your account credentials.
+                    </div>
+                </section>
+
+                <section class="pp-section" id="p9">
+                    <div class="pp-sec-label">Section 09</div>
+                    <h2 class="pp-sec-title">Your <span>Rights</span></h2>
+                    <div class="pp-body">
+                        <p>Depending on your location and applicable law, you may have the following rights regarding
+                            your personal data. To exercise any of these rights, contact us at <a
+                                href="mailto:support@playbeat.digital"
+                                style="color:#8cc8f8;text-decoration:none;">support@playbeat.digital</a>.</p>
+                    </div>
+                    <div class="rights-grid">
+                        <div class="right-card">
+                            <span class="right-card-icon">👁️</span>
+                            <div class="right-card-title">Right to Access</div>
+                            <div class="right-card-desc">Request a copy of the personal data we hold about you.</div>
+                        </div>
+                        <div class="right-card">
+                            <span class="right-card-icon">✏️</span>
+                            <div class="right-card-title">Right to Rectification</div>
+                            <div class="right-card-desc">Request correction of inaccurate or incomplete data.</div>
+                        </div>
+                        <div class="right-card">
+                            <span class="right-card-icon">🗑️</span>
+                            <div class="right-card-title">Right to Erasure</div>
+                            <div class="right-card-desc">Request deletion of your personal data where permitted by law.
+                            </div>
+                        </div>
+                        <div class="right-card">
+                            <span class="right-card-icon">🚫</span>
+                            <div class="right-card-title">Right to Object</div>
+                            <div class="right-card-desc">Object to processing based on legitimate interests or direct
+                                marketing.</div>
+                        </div>
+                        <div class="right-card">
+                            <span class="right-card-icon">📦</span>
+                            <div class="right-card-title">Data Portability</div>
+                            <div class="right-card-desc">Receive your data in a structured, machine-readable format.
+                            </div>
+                        </div>
+                        <div class="right-card">
+                            <span class="right-card-icon">⏸️</span>
+                            <div class="right-card-title">Right to Restrict</div>
+                            <div class="right-card-desc">Request restriction of processing in certain circumstances.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pp-callout">
+                        We will respond to all legitimate requests within <strong>30 days</strong>. We may need to
+                        verify your identity before processing your request.
+                    </div>
+                </section>
+
+                <section class="pp-section" id="p10">
+                    <div class="pp-sec-label">Section 10</div>
+                    <h2 class="pp-sec-title">Third-Party <span>Links</span></h2>
+                    <div class="pp-body">
+                        <p>Our website and services may contain links to third-party websites, integrations, or
+                            platforms. These external sites have their own privacy policies and we are not responsible
+                            for their content or data practices.</p>
+                        <p>We encourage you to review the privacy policies of any third-party services you interact with
+                            through our platforms, including payment processors and communication tools.</p>
+                    </div>
+                </section>
+
+                <section class="pp-section" id="p11">
+                    <div class="pp-sec-label">Section 11</div>
+                    <h2 class="pp-sec-title">Children's <span>Privacy</span></h2>
+                    <div class="pp-body">
+                        <p>Our services are not directed at individuals under the age of 18. We do not knowingly collect
+                            personal information from minors.</p>
+                    </div>
+                    <div class="pp-callout warn">
+                        <strong>Notice:</strong> If you believe a minor has provided us with personal data without
+                        parental consent, please contact us immediately at <a href="mailto:support@playbeat.digital"
+                            style="color:#f9cc7a;text-decoration:none;">support@playbeat.digital</a> and we will take
+                        steps to delete that information promptly.
+                    </div>
+                </section>
+
+                <section class="pp-section" id="p12">
+                    <div class="pp-sec-label">Section 12</div>
+                    <h2 class="pp-sec-title">International <span>Transfers</span></h2>
+                    <div class="pp-body">
+                        <p>Your personal data may be transferred to and processed in countries other than your country
+                            of residence. These countries may have different data protection laws than your own.</p>
+                        <p>When we transfer data internationally, we take appropriate safeguards to ensure your
+                            information is protected in accordance with this Privacy Policy, including the use of
+                            standard contractual clauses or reliance on adequacy decisions where applicable.</p>
+                    </div>
+                </section>
+
+                <section class="pp-section" id="p13">
+                    <div class="pp-sec-label">Section 13</div>
+                    <h2 class="pp-sec-title">Changes to <span>This Policy</span></h2>
+                    <div class="pp-body">
+                        <p>We may update this Privacy Policy from time to time to reflect changes in our practices,
+                            services, or applicable law. The updated version will be indicated by a revised effective
+                            date at the top of this page.</p>
+                        <p>We encourage you to review this Policy periodically. Continued use of our services after any
+                            updates constitutes acceptance of the revised Policy.</p>
+                    </div>
+                </section>
+
+                <section class="pp-section" id="p14">
+                    <div class="pp-sec-label">Section 14</div>
+                    <h2 class="pp-sec-title">Contact &amp; <span>Data Controller</span></h2>
+                    <div class="pp-body">
+                        <p>Playbeat Digital is the data controller for personal information collected through our
+                            services. If you have any questions, concerns, or requests relating to this Privacy Policy
+                            or your personal data, please reach out to us:</p>
+                    </div>
+                    <div class="pp-items" style="margin-top:1.25rem">
+                        <div class="pp-item">
+                            <div class="pp-item-dot"><svg width="9" height="9" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                    viewBox="0 0 24 24">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                                    <circle cx="12" cy="7" r="4" />
+                                </svg></div>
+                            <div><strong
+                                    style="color:var(--text);font-size:12px;font-family:'Share Tech Mono',monospace;letter-spacing:1px;text-transform:uppercase;">Data
+                                    Controller</strong><br>Muhammad Uzair — Playbeat Digital</div>
+                        </div>
+                        <div class="pp-item">
+                            <div class="pp-item-dot"><svg width="9" height="9" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                    viewBox="0 0 24 24">
+                                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                                </svg></div>
+                            <div><strong
+                                    style="color:var(--text);font-size:12px;font-family:'Share Tech Mono',monospace;letter-spacing:1px;text-transform:uppercase;">Email</strong><br><a
+                                    href="mailto:support@playbeat.digital"
+                                    style="color:#7a9ac8;text-decoration:none;">support@playbeat.digital</a></div>
+                        </div>
+                        <div class="pp-item">
+                            <div class="pp-item-dot"><svg width="9" height="9" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                    viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <line x1="2" y1="12" x2="22" y2="12" />
+                                    <path
+                                        d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                                </svg></div>
+                            <div><strong
+                                    style="color:var(--text);font-size:12px;font-family:'Share Tech Mono',monospace;letter-spacing:1px;text-transform:uppercase;">Website</strong><br><a
+                                    href="https://playbeat.digital" target="_blank"
+                                    style="color:#7a9ac8;text-decoration:none;">https://playbeat.digital</a></div>
+                        </div>
+                        <div class="pp-item">
+                            <div class="pp-item-dot"><svg width="9" height="9" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                                </svg></div>
+                            <div><strong
+                                    style="color:var(--text);font-size:12px;font-family:'Share Tech Mono',monospace;letter-spacing:1px;text-transform:uppercase;">Phone
+                                    / WhatsApp</strong><br><a href="https://wa.me/923318333368" target="_blank"
+                                    style="color:#7a9ac8;text-decoration:none;">+92 331 8333368</a></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CLOSING BAND -->
+                <div class="accept-band">
+                    <div class="ab-hud ab-tl"></div>
+                    <div class="ab-hud ab-tr"></div>
+                    <div class="ab-hud ab-bl"></div>
+                    <div class="ab-hud ab-br"></div>
+                    <div>
+                        <div class="accept-band-label">Your Privacy, Our Priority</div>
+                        <div class="accept-band-title">Questions About <span>Your Data?</span></div>
+                        <p class="accept-band-sub">We take privacy seriously. If you have any concerns about how your
+                            data is handled, our team is always available to help.</p>
+                    </div>
+                    <div class="accept-actions">
+                        <a class="btn-hero-primary" href="contact.html">
+                            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5"
+                                stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                <line x1="22" y1="2" x2="11" y2="13" />
+                                <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                            </svg>
+                            Contact Us
+                        </a>
+                        <a class="btn-hero-outline" href="terms.html">View Terms</a>
+                    </div>
+                </div>
+
+            </main>
+        </div><!-- /pp-layout -->
+
+    </div><!-- /page-wrap -->
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-banner">
+                <a class="footer-logo" href="index.html">
+                    <span class="footer-logo-digital">Digital</span>
+                    <div class="footer-logo-wordmark"><span class="footer-logo-play">play</span><span
+                            class="footer-logo-beat">beat</span></div>
+                    <div class="footer-logo-pvt">Digital Pvt Ltd</div>
+                    <div class="footer-logo-line"></div>
+                    <p class="footer-tagline">Driven by <span class="ft-play">Play</span>, Defined by <span
+                            class="ft-beat">beat.</span></p>
+                </a>
+                <div class="footer-support">
+                    <span class="support-label">Support</span>
+                    <a class="btn-support email" href="mailto:support@business.playbeat">
+                        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                            <rect x="2" y="4" width="20" height="16" rx="2" />
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                        </svg>Email
+                    </a>
+                    <a class="btn-support whatsapp" href="https://wa.me/923390005715" target="_blank" rel="noopener">
+                        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+                        </svg>WhatsApp
+                    </a>
+                    <a class="btn-support telegram" href="https://t.me/playbeatdigi01" target="_blank" rel="noopener">
+                        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+                        </svg>Telegram
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copy">© 2026 <strong>PlayBeat Digital</strong> — All rights reserved.</p>
+                <nav class="footer-legal-links">
+                    <a href="privacy.html" class="active-link">Privacy</a><span>·</span>
+                    <a href="terms.html">Terms</a><span>·</span>
+                    <a href="refund.html">Refunds</a><span>·</span>
+                    <a href="contact.html">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a class="floating-whatsapp" href="https://wa.me/923390005715" target="_blank" rel="noopener"
+        aria-label="Chat on WhatsApp">
+        <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+        </svg>
+    </a>
+
+</body>
+
+</html>
