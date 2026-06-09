@@ -5,6 +5,7 @@ import PaymentSuccess from "./pages/payment/Success";
 import PaymentFailed from "./pages/payment/Failed";
 import PaymentPending from "./pages/payment/Pending";
 import AdminPanel from "./pages/admin/AdminPanel";
+import AdminPayments from "./pages/admin/Payments";
 import Inventory from "./pages/Inventory";
 import Dashboard from "./pages/Dashboard";
 
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
   { path: "/payment/pending", element: <PaymentPending /> },
   { path: "/payment/cancel", element: <PaymentFailed /> },
   { path: "/admin", element: <AdminPanel /> },
+  { path: "/admin/payments", element: <AdminPayments /> },
   { path: "/inventory", element: <Inventory /> },
   { path: "/dashboard", element: <Dashboard /> },
 ]);
