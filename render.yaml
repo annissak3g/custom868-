@@ -11,7 +11,7 @@ services:
       - key: MONGODB_URI
         sync: false
       - key: PORT
-        value: "5000"
+        value: "3000"
       - key: NODE_ENV
         value: "production"
       - key: FRONTEND_URL
