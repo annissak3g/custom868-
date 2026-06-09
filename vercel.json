@@ -6,14 +6,17 @@
             "src": "1/package.json",
             "use": "@vercel/static-build",
             "config": {
-                "distDir": "dist"
+                "distDir": "1/dist"
             }
         }
     ],
+    "env": {
+        "VITE_API_URL": "@vite_api_url"
+    },
     "routes": [
         {
             "src": "/api/(.*)",
-            "dest": "/api/$1"
+            "dest": "https://playbeat-backend.onrender.com/api/$1"
         },
         {
             "src": "/(.*)",
