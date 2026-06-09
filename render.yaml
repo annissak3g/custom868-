@@ -5,7 +5,7 @@ services:
     repo: "https://github.com/annissak3g/custom868-.git"
     branch: main
     plan: free
-    buildCommand: "cd 2 && npm install"
+    buildCommand: "cd 2 && npm install --production"
     startCommand: "cd 2 && npm start"
     envVars:
       - key: MONGODB_URI
@@ -20,5 +20,19 @@ services:
         sync: false
       - key: STRIPE_PUBLISHABLE_KEY
         sync: false
+      - key: STRIPE_ACCOUNT_ID
+        sync: false
       - key: SECRET_KEY
+        sync: false
+      - key: JAZZ_CASH_AGENT_ID
+        sync: false
+      - key: JAZZ_CASH_PASSWORD
+        sync: false
+      - key: ALFALAH_MERCHANT_ID
+        sync: false
+      - key: ALFALAH_PASSWORD
+        sync: false
+      - key: MEEZAN_MERCHANT_ID
+        sync: false
+      - key: MEEZAN_PASSWORD
         sync: false
